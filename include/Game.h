@@ -2,6 +2,7 @@
 
 #include "Engine.h"
 #include "Cat.h"
+#include "GameBackground.h"
 
 class Game {
 public:
@@ -13,5 +14,7 @@ public:
 	void draw();
 	void exit();
 
+	GameBackground m_bg;
 	Cat m_cat;
+	int distance;
 };
