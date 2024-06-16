@@ -113,7 +113,6 @@ void InputManager::handleInput()
         m_mouseIsPressedPrevFrame = false;
         m_mouseOnClick = false;
     }
-
 }
 
 bool InputManager::anyKeyIsPressed()

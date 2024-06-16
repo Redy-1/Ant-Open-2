@@ -26,6 +26,7 @@ public:
 	int timer;
 
 	float2 vel;
+	bool boosting;
 
 	void getFuel();
 	SDL_Rect calc_hitbox();

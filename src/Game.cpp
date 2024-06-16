@@ -12,7 +12,7 @@ void Game::init()
 {
 	m_bg.init();
 	m_cat.init();
-	distance = 10000;
+	distance = 1000000;
 }
 
 void Game::update()
