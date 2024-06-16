@@ -13,7 +13,7 @@ World::~World()
 void World::init()
 {
 	m_presenter.init();
-	menu.init_all();
+	menu.init_all_start();
 	
 	game_state = 0;
 }
@@ -45,6 +45,15 @@ void World::run()
 	if (game_state == 1) {
 
 		m_game.update();
+	}
+	if (game_state == 2) {
+		menu.init_outFuel_all();
+	}
+	if (game_state == 3) {
+		menu.init_crashed_all();
+	}
+	if (game_state == 4) {
+		menu.init_escaped_all();
 	}
 	m_presenter.draw();
 }

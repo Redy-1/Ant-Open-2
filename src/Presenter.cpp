@@ -61,8 +61,11 @@ void Presenter::draw()
     SDL_SetRenderDrawColor(Presenter::m_main_renderer, 0, 0, 0, 1);
     SDL_RenderClear(m_main_renderer);
     
-    world.menu.draw_all();
+    world.menu.draw_all_start();
     world.m_game.draw();
+    world.menu.draw_crashed_all();
+    world.menu.draw_outFuel_all();
+    world.menu.draw_escaped_all();
     SDL_RenderPresent(m_main_renderer);
 }
 

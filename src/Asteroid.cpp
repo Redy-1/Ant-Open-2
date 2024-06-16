@@ -52,6 +52,7 @@ void Asteroid::update()
 	// cent.y = pos.y + pos.h / 2;
 	if (collRectRect(hitbox, world.m_game.m_cat.hitbox)) {
 		// game over
+		world.game_state = 3;
 	}
 }
 

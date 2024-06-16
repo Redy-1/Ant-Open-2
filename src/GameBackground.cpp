@@ -22,7 +22,7 @@ void GameBackground::init()
 void GameBackground::update()
 {
 	star_pos = { int(world.m_game.distance * scrollMult) % STARS_WIDTH,int(world.m_game.distY * scrollMult) % STARS_HEIGTH,STARS_WIDTH,STARS_HEIGTH };
-	if (curr_planet == 7);
+	if (curr_planet == 7) { world.game_state = 4; }
 	else {
 		if (world.m_game.distance >= planet_switch[curr_planet]) curr_planet++;
 	}

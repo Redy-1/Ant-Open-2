@@ -186,30 +186,29 @@ void Menu::draw_outFuel_all()
 	draw_outFuel();
 }
 
-
-void Menu::draw_escaped()
+void Menu::draw_crashed()
 {
 	Drawable tmp;
-	tmp.texture = m_escaped_texture;
-	tmp.drect = m_escaped_rect;
+	tmp.texture = m_crashed_texture;
+	tmp.drect = m_crashed_rect;
 
-	tmp.srect = { 0,0,m_escaped_rect.w,m_escaped_rect.h };
+	tmp.srect = { 0,0,m_crashed_rect.w,m_crashed_rect.h };
 	drawObject(tmp);
 }
 
-void Menu::draw_background_outFuel()
+void Menu::draw_background_crashed()
 {
 	Drawable tmp;
-	tmp.texture = m_background_escaped_texture;
-	tmp.drect = m_background_escaped_rect;
-	tmp.srect = { 0,0,m_background_escaped_rect.w,m_background_escaped_rect.h };
+	tmp.texture = m_background_crashed_texture;
+	tmp.drect = m_background_crashed_rect;
+	tmp.srect = { 0,0,m_background_crashed_rect.w,m_background_crashed_rect.h };
 	drawObject(tmp);
 }
 
-void Menu::draw_escaped_all()
+void Menu::draw_crashed_all()
 {
-	draw_background_escaped();
-	draw_escaped();
+	draw_background_crashed();
+	draw_crashed();
 }
 
 
