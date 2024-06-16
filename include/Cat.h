@@ -25,13 +25,13 @@ public:
 	int sprite;
 	int timer;
 
-	float2 vel;
+	int2 vel;
 	bool boosting;
 
 	void getFuel();
 	SDL_Rect calc_hitbox();
 
-	const int BOOST_VEL = 10;
+	const int BOOST_VEL = 2;
 	const int D_ANGLE = 1;
 	void boost();
 	void turn(bool);

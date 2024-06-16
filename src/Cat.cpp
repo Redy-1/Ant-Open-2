@@ -34,8 +34,8 @@ void Cat::update()
 	if (angle < 0) angle += 360;
 	angle %= 360;
 	if (InputManager::m_keyboardState[SDL_SCANCODE_SPACE]) boost();
-	if (InputManager::m_keyboardState[SDL_SCANCODE_W]) turn(0);
-	if (InputManager::m_keyboardState[SDL_SCANCODE_S]) turn(1);
+	if (InputManager::m_keyboardState[SDL_SCANCODE_A]) turn(0);
+	if (InputManager::m_keyboardState[SDL_SCANCODE_D]) turn(1);
 }
 
 void Cat::draw()

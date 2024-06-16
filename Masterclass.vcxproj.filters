@@ -37,6 +37,12 @@
     <ClCompile Include="src\GameBackground.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Asteroid.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pepper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\World.h">
@@ -61,6 +67,12 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\GameBackground.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Pepper.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asteroid.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
