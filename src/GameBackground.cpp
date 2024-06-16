@@ -22,6 +22,10 @@ void GameBackground::init()
 void GameBackground::update()
 {
 	star_pos = { int(world.m_game.distance * scrollMult) % STARS_WIDTH,0,STARS_WIDTH,STARS_HEIGTH };
+	if (curr_planet == 7);
+	else {
+		if (world.m_game.distance >= planet_switch[curr_planet]) curr_planet++;
+	}
 }
 
 void GameBackground::draw()
@@ -32,7 +36,7 @@ void GameBackground::draw()
 	tmp.srect = star_pos;
 	drawObject(tmp);
 
-	int x_pos = (planet_appear[curr_planet] - world.m_game.distance) * float(PLANET_SCREEN_DIST/planet_dist[curr_planet]);
+	int x_pos = float(PLANET_SCREEN_DIST)/planet_dist[curr_planet] * (planet_appear[curr_planet] - world.m_game.distance);
 	Drawable tmp2;
 	tmp2.texture = planet_txt;
 	tmp2.drect = { x_pos,140,800,800 };

@@ -7,7 +7,7 @@ public:
 	Asteroid();
 	~Asteroid();
 
-	void init(int);
+	void init(int,int,int);
 	void update();
 	void draw();
 	void exit();
