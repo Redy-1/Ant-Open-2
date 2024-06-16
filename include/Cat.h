@@ -37,7 +37,6 @@ public:
 	void boost();
 	void turn(bool);
 
-private:
 	int fuel;
 	const int maxFuel = 300;
 };
