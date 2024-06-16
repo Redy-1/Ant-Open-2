@@ -49,6 +49,8 @@ void Cat::update()
 	if (timer >= 60) timer = 0;
 	hitbox = calc_hitbox();
 
+	if (fuel==0&&vel.x<=0.01&&vel.y<=0.01) // game over
+
 	/*
 	int svelx = vel.x;
 	for (int i = 0; i < 4; i++) {
