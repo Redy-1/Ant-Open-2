@@ -3,7 +3,7 @@
 // #include "start_menu.h"
 #include "Presenter.h"
 #include "InputManager.h"
-#include "Cat.h"
+#include "Game.h"
 
 class World
 {
@@ -19,7 +19,7 @@ public:
 	void run();
 	void destroy();
 
-	Cat m_cat;
+	Game m_game;
 	// Menu menu;
 
 	bool isRunning();

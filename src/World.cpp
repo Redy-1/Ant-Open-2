@@ -13,14 +13,14 @@ void World::init()
 {
 	m_presenter.init();
 	// menu.init_all();
-	m_cat.init();
+	m_game.init();
 	game_state = 0;
 }
 
 void World::run()
 {
 	m_inputManager.handleInput();
-	m_cat.update();
+	m_game.update();
 	m_presenter.draw();
 }
 
@@ -40,6 +40,6 @@ bool World::isRunning()
 void World::quit()
 {
 	m_isRunning = false;
-	m_cat.exit();
+	m_game.exit();
 	destroy();
 }
