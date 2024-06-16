@@ -13,6 +13,7 @@ void Game::init()
 	srand(time(NULL));
 	m_bg.init();
 	m_cat.init();
+	m_fb.init();
 	for (int i = 0; i < 5; i++) {
 		m_asteroid[i].init(rand() % 3, 3000 + 600 * i, rand() % 2000 - 500, rand() % 360);
 	}
@@ -28,6 +29,7 @@ void Game::update()
 	if (distY < 0) distY += 360;
 	m_bg.update();
 	m_cat.update();
+	m_fb.update();
 	for (int i = 0; i < 5; i++) {
 		if (m_asteroid[i].pos.x <= ASTEROID_DESPAWN) {
 			m_asteroid[i].exit();
@@ -46,6 +48,7 @@ void Game::draw()
 {
 	m_bg.draw();
 	m_cat.draw();
+	m_fb.draw();
 	for (int i = 0; i < 5; i++) {
 		m_asteroid[i].draw();
 	}
@@ -57,6 +60,7 @@ void Game::exit()
 {
 	m_bg.exit();
 	m_cat.exit();
+	m_fb.exit();
 	for (int i = 0; i < 5; i++) {
 		m_asteroid[i].exit();
 	}

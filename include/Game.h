@@ -5,6 +5,8 @@
 #include "GameBackground.h"
 #include "Asteroid.h"
 #include "Pepper.h"
+#include "FuelBar.h"
+
 class Game {
 public:
 	Game();
@@ -16,6 +18,7 @@ public:
 	void exit();
 
 	GameBackground m_bg;
+	FuelBar m_fb;
 	Cat m_cat;
 	int distance;
 	int distY;
