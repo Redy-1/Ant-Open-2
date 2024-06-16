@@ -39,5 +39,5 @@ public:
 
 private:
 	int fuel;
-	const int maxFuel = 100;
+	const int maxFuel = 300;
 };

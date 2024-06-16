@@ -4,7 +4,7 @@
 #include "Cat.h"
 #include "GameBackground.h"
 #include "Asteroid.h"
-
+#include "Pepper.h"
 class Game {
 public:
 	Game();
@@ -18,7 +18,10 @@ public:
 	GameBackground m_bg;
 	Cat m_cat;
 	int distance;
+	int distY;
 
 	Asteroid m_asteroid[5];
 	const int ASTEROID_DESPAWN = -1000;
+
+	Pepper m_pepper;
 };

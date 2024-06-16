@@ -16,12 +16,16 @@ void Game::init()
 	for (int i = 0; i < 4; i++) {
 		m_asteroid[i].init(rand() % 3, 3000 + 750 * i, rand() % 2000 - 500, rand() % 360);
 	}
+	m_pepper.init(1500,300);
 	distance = 0;
+	distY = 10000000;
 }
 
 void Game::update()
 {
-	distance+=m_cat.vel.x;
+	distance += m_cat.vel.x;
+	distY += m_cat.vel.y;
+	if (distY < 0) distY += 360;
 	m_bg.update();
 	m_cat.update();
 	for (int i = 0; i < 4; i++) {
@@ -31,7 +35,11 @@ void Game::update()
 		}
 		m_asteroid[i].update();
 	}
-	
+	if (m_pepper.pos.x <= ASTEROID_DESPAWN) {
+		m_pepper.exit();
+		m_pepper.init(3000, rand() % 1500 - 250);
+	}
+	m_pepper.update();
 }
 
 void Game::draw()
@@ -41,6 +49,7 @@ void Game::draw()
 	for (int i = 0; i < 4; i++) {
 		m_asteroid[i].draw();
 	}
+	m_pepper.draw();
 	
 }
 
@@ -51,4 +60,5 @@ void Game::exit()
 	for (int i = 0; i < 4; i++) {
 		m_asteroid[i].exit();
 	}
+	m_pepper.exit();
 }

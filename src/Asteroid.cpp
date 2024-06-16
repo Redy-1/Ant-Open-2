@@ -47,8 +47,8 @@ void Asteroid::update()
 	pos.x -= vel.x;
 	pos.y -= vel.y;
 	hitbox = calc_hitbox();
-	cent.x = pos.x + pos.w / 2;
-	cent.y = pos.y + pos.h / 2;
+	// cent.x = pos.x + pos.w / 2;
+	// cent.y = pos.y + pos.h / 2;
 
 }
 
