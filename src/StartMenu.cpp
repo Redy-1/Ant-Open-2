@@ -51,7 +51,7 @@ void Menu::init_background_outFuel()
 	m_background_outFuel_rect.y = 0;
 	m_background_outFuel_rect.w = 1920;
 	m_background_outFuel_rect.h = 1080;
-	m_background_outFuel_texture = loadTexture("backgroundOutFuel.bmp");
+	//m_background_outFuel_texture = loadTexture("backgroundOutFuel.bmp");
 }
 
 void Menu::init_background_crashed()

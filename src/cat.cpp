@@ -49,7 +49,7 @@ void Cat::update()
 	if (timer >= 60) timer = 0;
 	hitbox = calc_hitbox();
 
-	if (fuel==0&&vel.x<=0.01&&vel.y<=0.01) // game over
+	if (fuel == 0 && vel.x <= 0.1 && vel.y <= 0.1) { world.game_state = 2; } // game over
 
 	/*
 	int svelx = vel.x;
@@ -105,7 +105,7 @@ SDL_Rect Cat::calc_hitbox()
 
 void Cat::boost()
 {
-	// if (fuel <= 0) return;
+	if (fuel <= 0) return;
 	vel.x += BOOST_VEL * cos(angle * 3.14 / 180);
 	vel.y += BOOST_VEL * sin(angle * 3.14 / 180);
 	boosting = true;

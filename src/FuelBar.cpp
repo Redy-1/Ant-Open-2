@@ -13,6 +13,8 @@ FuelBar::~FuelBar()
 
 void FuelBar::init()
 {
+	SDL_SetRenderDrawColor(Presenter::m_main_renderer, 255, 0, 0, 1);
+
 	pos = { 30,800,130,270 };
 	frame_txt = loadTexture("fuelbar.bmp");
 }
@@ -24,6 +26,8 @@ void FuelBar::update()
 
 void FuelBar::draw()
 {
+	SDL_SetRenderDrawColor(Presenter::m_main_renderer, 255, 0, 0, 1);
+
 	int height = (float)world.m_game.m_cat.fuel / world.m_game.m_cat.maxFuel * 270;
 	SDL_Rect pos2 = pos;
 	pos2.h = height;
