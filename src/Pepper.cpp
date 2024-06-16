@@ -13,30 +13,35 @@ Pepper::~Pepper()
 
 void Pepper::init(int pos_x, int pos_y)
 {
-	pos = { 0,0,500,500 };
+	pos = { 0,0,300,300 };
 	pos.x = pos_x;
 	pos.y = pos_y;
-	hitbox = { 0,0,500,500 };
+	hitbox = { 0,0,300,300 };
 	hitbox = calc_hitbox();
 	txt = loadTexture("pepper.bmp");
+	eaten = false;
 }
 
 void Pepper::update()
 {
-	int2 vel = world.m_game.m_cat.vel;
+	float2 vel = world.m_game.m_cat.vel;
 	pos.x -= vel.x;
 	pos.y -= vel.y;
 	hitbox = calc_hitbox();
 
-	if (collRectRect(hitbox, world.m_game.m_cat.hitbox)) world.m_game.m_cat.getFuel();
+	if (collRectRect(hitbox, world.m_game.m_cat.hitbox)) {
+		world.m_game.m_cat.getFuel();
+		eaten = true;
+	}
 }
 
 void Pepper::draw()
 {
+	if (eaten) return;
 	Drawable tmp;
 	tmp.texture = txt;
 	tmp.drect = pos;
-	tmp.srect = { 0,0,500,500 };
+	tmp.srect = { 0,0,300,300 };
 	drawObject(tmp);
 	if (DEBUG) {
 		SDL_SetRenderDrawColor(Presenter::m_main_renderer, 255, 0, 0, 1);

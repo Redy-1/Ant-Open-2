@@ -18,5 +18,7 @@ public:
 	SDL_Rect hitbox;
 	SDL_Rect calc_hitbox();
 
+	bool eaten;
+
 	static const int FUEL_RECOVERY = 50;
 };

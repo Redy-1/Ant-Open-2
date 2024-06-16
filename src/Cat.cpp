@@ -38,15 +38,16 @@ void Cat::update()
 	if (sprite == 3)sprite = 0;
 	if (angle < 0) angle += 360;
 	angle %= 360;
-	/*if (timer % 12 == 0) {
-		vel.x -= 1 * cos(angle * 3.14 / 180);
-		vel.y -= 1 * sin(angle * 3.14 / 180);
-	}*/
+
+	vel.x *= 0.998;
+	vel.y *= 0.998;
+
 	if (InputManager::m_keyboardState[SDL_SCANCODE_SPACE]) boost();
 	if (InputManager::m_keyboardState[SDL_SCANCODE_A]) turn(0);
 	if (InputManager::m_keyboardState[SDL_SCANCODE_D]) turn(1);
 
 	if (timer >= 60) timer = 0;
+	hitbox = calc_hitbox();
 
 	/*
 	int svelx = vel.x;
@@ -91,8 +92,10 @@ void Cat::getFuel()
 SDL_Rect Cat::calc_hitbox()
 {
 	SDL_Rect tmp = pos;
-	tmp.x += (CAT_WIDTH - CAT_HITBOX_WIDTH) / 2;
-	tmp.y += (CAT_HEIGHT - CAT_HITBOX_HEIGHT) / 2;
+	tmp.x += 35;
+	tmp.x += 35.0 * cos(angle * 3.14 / 180);
+	tmp.y += 35.0 * sin(angle * 3.14 / 180);
+
 	tmp.w = CAT_HITBOX_WIDTH;
 	tmp.h = CAT_HITBOX_HEIGHT;
 	return tmp;
@@ -100,7 +103,7 @@ SDL_Rect Cat::calc_hitbox()
 
 void Cat::boost()
 {
-	if (fuel <= 0) return;
+	// if (fuel <= 0) return;
 	vel.x += BOOST_VEL * cos(angle * 3.14 / 180);
 	vel.y += BOOST_VEL * sin(angle * 3.14 / 180);
 	boosting = true;
