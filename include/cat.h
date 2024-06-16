@@ -14,7 +14,7 @@ public:
 
 	static const int CAT_WIDTH = 138;
 	static const int CAT_HEIGHT = 63;
-	static const int CAT_HITBOX_WIDTH = 138;
+	static const int CAT_HITBOX_WIDTH = 63;
 	static const int CAT_HITBOX_HEIGHT = 63;
 
 	SDL_Rect pos;
@@ -26,18 +26,18 @@ public:
 	int sprite;
 	int timer;
 
-	int2 vel;
+	float2 vel;
 	bool boosting;
 
 	void getFuel();
 	SDL_Rect calc_hitbox();
 
-	const int BOOST_VEL = 2;
-	const int D_ANGLE = 1;
+	const float BOOST_VEL = 0.6;
+	const int D_ANGLE = 2;
 	void boost();
 	void turn(bool);
 
 private:
 	int fuel;
-	const int maxFuel = 100;
+	const int maxFuel = 300;
 };
