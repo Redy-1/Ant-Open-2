@@ -36,7 +36,7 @@ public:
 	const int D_ANGLE = 2;
 	void boost();
 	void turn(bool);
-
+	
 	int fuel;
 	const int maxFuel = 300;
 };
