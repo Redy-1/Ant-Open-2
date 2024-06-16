@@ -12,13 +12,32 @@ Asteroid::~Asteroid()
 {
 }
 
-void Asteroid::init(int size)
+void Asteroid::init(int size,int pos_x,int pos_y, int ang)
 {
-	txt = loadTexture("asteroid1.bmp");
-	pos = { 0,0,430,347 };
-	mass = 100;
-	angle = 0;
-	hitbox = { 0,0,420,337 };
+	switch (size) {
+	case 0: 
+		txt = loadTexture("asteroid1.bmp");
+		pos = { pos_x,pos_y,430,347 };
+		mass = 20;
+		hitbox = { 0,0,420,337 };
+		break;
+	case 1:
+		txt = loadTexture("asteroid2.bmp");
+		pos = { pos_x,pos_y,313,280 };
+		mass = 15;
+		hitbox = { 0,0,300,260 };
+		break;
+	case 2:
+		txt = loadTexture("asteroid3.bmp");
+		pos = { pos_x,pos_y,225,225 };
+		mass = 10;
+		hitbox = { 0,0,215,215 };
+		break;
+	default:
+		break;
+	}
+	cout << size << " " << pos_y << " " << ang << endl;
+	angle = ang;
 	hitbox = calc_hitbox();
 }
 
@@ -28,6 +47,9 @@ void Asteroid::update()
 	pos.x -= vel.x;
 	pos.y -= vel.y;
 	hitbox = calc_hitbox();
+	cent.x = pos.x + pos.w / 2;
+	cent.y = pos.y + pos.h / 2;
+
 }
 
 void Asteroid::draw()

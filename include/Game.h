@@ -17,6 +17,8 @@ public:
 
 	GameBackground m_bg;
 	Cat m_cat;
-	Asteroid m_asteroid;
 	int distance;
+
+	Asteroid m_asteroid[5];
+	const int ASTEROID_DESPAWN = -1000;
 };
