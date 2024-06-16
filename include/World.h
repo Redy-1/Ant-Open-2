@@ -1,31 +1,28 @@
 #pragma once
 
-#include "SDL.h"
+// #include "start_menu.h"
+#include "Presenter.h"
+#include "InputManager.h"
 
-class World {
+class World
+{
 public:
 	World();
 	~World();
 
-	bool m_run;
-
-	
-
-
-	SDL_Window* m_mainWindow;
-	SDL_Renderer* m_mainRenderer;
-
-	SDL_Texture* m_backgroundTexture;
-	SDL_Texture* m_Test;
-
-	SDL_Rect m_rect;
+	Presenter m_presenter;
+	InputManager m_inputManager;
 
 	void init();
-	void update();
-	void draw();
-	void exit();
-	//void mouse_pos();
+	void run();
+	void destroy();
 
-	void initSDL();
-	void improveRenderer();
+	// Menu menu;
+
+	bool isRunning();
+	void quit();
+
+	int game_state = 0;
+private:
+	bool m_isRunning;
 };

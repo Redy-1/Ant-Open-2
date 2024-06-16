@@ -22,6 +22,15 @@
     <ClCompile Include="src\InputManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\cat.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Presenter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\World.h">
@@ -31,6 +40,15 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\InputManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cat.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Presenter.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
