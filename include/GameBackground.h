@@ -12,7 +12,7 @@ public:
 	void draw();
 	void exit();
 
-	const float scrollMult = 0.01;
+	const float scrollMult = 0.05;
 
 	const int STARS_WIDTH = 540;
 	const int STARS_HEIGTH = 360;
