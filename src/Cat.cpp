@@ -1,6 +1,9 @@
 #include "Cat.h"
 #include "Presenter.h"
 #include "InputManager.h"
+#include "World.h"
+
+extern World world;
 
 Cat::Cat()
 {
@@ -13,6 +16,7 @@ Cat::~Cat()
 void Cat::init()
 {
 	pos = { 200,520,CAT_WIDTH,CAT_HEIGHT };
+	cent = { 100,260 };
 	angle = 0;
 	vel = { 0,0 };
 	txt = loadTexture("rocket.bmp");
@@ -20,6 +24,8 @@ void Cat::init()
 	sprite = 0;
 	timer = 0;
 	boosting = false;
+
+	
 }
 
 void Cat::update()
@@ -36,6 +42,20 @@ void Cat::update()
 	if (InputManager::m_keyboardState[SDL_SCANCODE_SPACE]) boost();
 	if (InputManager::m_keyboardState[SDL_SCANCODE_A]) turn(0);
 	if (InputManager::m_keyboardState[SDL_SCANCODE_D]) turn(1);
+
+	/*
+	int svelx = vel.x;
+	for (int i = 0; i < 4; i++) {
+		int2 dist;
+		dist.x = world.m_game.m_asteroid[i].cent.x - cent.x;
+		dist.y = world.m_game.m_asteroid[i].cent.y - cent.y;
+		long long tdist2 = pow(dist.x, 2) + pow(dist.y, 2);
+		cout << "d: " << sqrt(tdist2) << endl;
+		vel.x += (float)world.m_game.m_asteroid[i].mass * (float(dist.x)/sqrt(tdist2)) / tdist2;
+		vel.y += (float)world.m_game.m_asteroid[i].mass * (float(dist.y)/sqrt(tdist2)) / tdist2;
+	}
+	cout << "dv: " << (vel.x - svelx) << endl;
+	*/
 }
 
 void Cat::draw()

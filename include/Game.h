@@ -19,6 +19,6 @@ public:
 	Cat m_cat;
 	int distance;
 
-	Asteroid m_asteroid[10];
+	Asteroid m_asteroid[5];
 	const int ASTEROID_DESPAWN = -1000;
 };
