@@ -18,6 +18,7 @@ public:
 	static const int CAT_HITBOX_HEIGHT = 63;
 
 	SDL_Rect pos;
+	int2 cent;
 	SDL_Rect hitbox;
 	int angle;
 
