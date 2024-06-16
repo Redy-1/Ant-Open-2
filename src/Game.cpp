@@ -13,7 +13,7 @@ void Game::init()
 	m_bg.init();
 	m_cat.init();
 	m_asteroid.init(0);
-	distance = 1000000;
+	distance = 0;
 }
 
 void Game::update()
