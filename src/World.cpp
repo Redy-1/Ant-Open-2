@@ -1,4 +1,5 @@
 #include "World.h"
+#include <iostream>
 
 World::World()
 {
@@ -12,15 +13,39 @@ World::~World()
 void World::init()
 {
 	m_presenter.init();
-	// menu.init_all();
-	m_game.init();
+	menu.init_all();
+	
 	game_state = 0;
 }
 
 void World::run()
 {
+
 	m_inputManager.handleInput();
-	m_game.update();
+	m_presenter.draw();
+	if (game_state == 0) {
+		if (m_inputManager.m_mouseIsPressed) {
+			if (MouseIsInRect(m_inputManager.m_mouseCoor, menu.m_quit_rect)) {
+				quit();
+			}
+			
+			if (MouseIsInRect(m_inputManager.m_mouseCoor, menu.m_play_rect)) {
+				game_state = 1;
+				m_inputManager.handleInput();
+				m_game.init();
+
+				m_game.update();
+				m_presenter.draw();
+				while (!m_inputManager.anyKeyIsPressed()) {
+					m_inputManager.handleInput();
+				}
+			}
+		}
+	}
+	if (game_state == 1) {
+
+		m_game.update();
+	}
 	m_presenter.draw();
 }
 

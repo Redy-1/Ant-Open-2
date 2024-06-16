@@ -4,6 +4,7 @@
 #include "Presenter.h"
 #include "InputManager.h"
 #include "Game.h"
+#include "StartMenu.h"
 
 class World
 {
@@ -20,7 +21,7 @@ public:
 	void destroy();
 
 	Game m_game;
-	// Menu menu;
+	Menu menu;
 
 	bool isRunning();
 	void quit();

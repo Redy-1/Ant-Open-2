@@ -160,6 +160,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Pepper.cpp" />
     <ClCompile Include="src\Presenter.cpp" />
+    <ClCompile Include="src\StartMenu.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,7 @@
     <ClInclude Include="include\InputManager.h" />
     <ClInclude Include="include\Pepper.h" />
     <ClInclude Include="include\Presenter.h" />
+    <ClInclude Include="include\StartMenu.h" />
     <ClInclude Include="include\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
