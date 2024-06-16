@@ -12,23 +12,30 @@ Cat::~Cat()
 
 void Cat::init()
 {
-	pos = { 0,0,CAT_WIDTH,CAT_HEIGHT };
+	pos = { 200,520,CAT_WIDTH,CAT_HEIGHT };
 	angle = 0;
 	vel = { 0,0 };
 	txt = loadTexture("rocket.bmp");
 	hitbox = calc_hitbox();
 	sprite = 0;
 	timer = 0;
+	boosting = false;
 }
 
 void Cat::update()
 {
+	boosting = false;
 	timer++;
 	if (timer >= 6) {
 		sprite++;
 		timer = 0;
 	}
 	if (sprite == 3)sprite = 0;
+	if (angle < 0) angle += 360;
+	angle %= 360;
+	if (InputManager::m_keyboardState[SDL_SCANCODE_SPACE]) boost();
+	if (InputManager::m_keyboardState[SDL_SCANCODE_W]) turn(0);
+	if (InputManager::m_keyboardState[SDL_SCANCODE_S]) turn(1);
 }
 
 void Cat::draw()
@@ -36,8 +43,8 @@ void Cat::draw()
 	Drawable tmp;
 	tmp.texture = txt;
 	tmp.drect = pos;
-	tmp.srect = { sprite * CAT_WIDTH,0,CAT_WIDTH,CAT_HEIGHT };
-	tmp.angle = atan2(vel.y, vel.x) * 180 / 3.14;
+	tmp.srect = { sprite * CAT_WIDTH,boosting*CAT_HEIGHT,CAT_WIDTH,CAT_HEIGHT };
+	tmp.angle = angle;
 	drawObject(tmp);
 	if (DEBUG) {
 		SDL_SetRenderDrawColor(Presenter::m_main_renderer, 255, 0, 0, 1);
@@ -62,4 +69,16 @@ SDL_Rect Cat::calc_hitbox()
 	tmp.w = CAT_HITBOX_WIDTH;
 	tmp.h = CAT_HITBOX_HEIGHT;
 	return tmp;
+}
+
+void Cat::boost()
+{
+	vel.x += BOOST_VEL * cos(angle * 3.14 / 180);
+	vel.y += BOOST_VEL * sin(angle * 3.14 / 180);
+	boosting = true;
+}
+
+void Cat::turn(bool dir) {
+	if (dir) angle += D_ANGLE;
+	else angle -= D_ANGLE;
 }
