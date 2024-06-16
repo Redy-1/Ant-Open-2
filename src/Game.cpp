@@ -12,12 +12,12 @@ void Game::init()
 {
 	m_bg.init();
 	m_cat.init();
-	distance = 0;
+	distance = 10000;
 }
 
 void Game::update()
 {
-	distance+=10;
+	distance+=m_cat.vel.x;
 	m_bg.update();
 	m_cat.update();
 }

@@ -12,10 +12,10 @@ public:
 	void draw();
 	void exit();
 
-	static const int CAT_WIDTH = 63;
-	static const int CAT_HEIGHT = 138;
-	static const int CAT_HITBOX_WIDTH = 63;
-	static const int CAT_HITBOX_HEIGHT = 138;
+	static const int CAT_WIDTH = 138;
+	static const int CAT_HEIGHT = 63;
+	static const int CAT_HITBOX_WIDTH = 138;
+	static const int CAT_HITBOX_HEIGHT = 63;
 
 	SDL_Rect pos;
 	SDL_Rect hitbox;
@@ -31,7 +31,9 @@ public:
 	SDL_Rect calc_hitbox();
 
 	const int BOOST_VEL = 10;
+	const int D_ANGLE = 1;
 	void boost();
+	void turn(bool);
 
 private:
 	int fuel;
