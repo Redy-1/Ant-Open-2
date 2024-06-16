@@ -48,12 +48,12 @@ void Game::draw()
 {
 	m_bg.draw();
 	m_cat.draw();
-	m_fb.draw();
+	
 	for (int i = 0; i < 5; i++) {
 		m_asteroid[i].draw();
 	}
 	m_pepper.draw();
-	
+	m_fb.draw();
 }
 
 void Game::exit()
