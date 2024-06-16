@@ -147,21 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\cards.cpp" />
-    <ClCompile Include="src\grid.cpp" />
     <ClCompile Include="src\InputManager.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pawn.cpp" />
-    <ClCompile Include="src\tile.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\cards.h" />
     <ClInclude Include="include\defines.h" />
-    <ClInclude Include="include\grid.h" />
     <ClInclude Include="include\InputManager.h" />
-    <ClInclude Include="include\pawn.h" />
-    <ClInclude Include="include\tile.h" />
     <ClInclude Include="include\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

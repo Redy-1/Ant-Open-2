@@ -1,7 +1,6 @@
 #pragma once
 
 #include "SDL.h"
-#include "grid.h"
 
 class World {
 public:
@@ -20,8 +19,6 @@ public:
 	SDL_Texture* m_Test;
 
 	SDL_Rect m_rect;
-
-	Grid m_grid;
 
 	void init();
 	void update();

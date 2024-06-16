@@ -19,19 +19,7 @@
     <ClCompile Include="src\World.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\grid.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pawn.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\InputManager.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tile.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cards.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,22 +27,10 @@
     <ClInclude Include="include\World.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\grid.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\defines.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\pawn.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\InputManager.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\tile.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\cards.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
