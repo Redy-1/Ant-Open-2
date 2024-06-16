@@ -22,7 +22,7 @@
     <ClCompile Include="src\InputManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\cat.cpp">
+    <ClCompile Include="src\Cat.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine.cpp">
@@ -42,7 +42,7 @@
     <ClInclude Include="include\InputManager.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\cat.h">
+    <ClInclude Include="include\Cat.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\Presenter.h">

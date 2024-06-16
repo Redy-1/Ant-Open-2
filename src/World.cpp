@@ -13,13 +13,14 @@ void World::init()
 {
 	m_presenter.init();
 	// menu.init_all();
-
+	m_cat.init();
 	game_state = 0;
 }
 
 void World::run()
 {
 	m_inputManager.handleInput();
+	m_cat.update();
 	m_presenter.draw();
 }
 
@@ -27,7 +28,7 @@ void World::run()
 void World::destroy()
 {
 	SDL_DestroyRenderer(m_presenter.m_main_renderer);
-
+	
 	SDL_DestroyWindow(m_presenter.m_main_window);
 }
 
@@ -39,5 +40,6 @@ bool World::isRunning()
 void World::quit()
 {
 	m_isRunning = false;
+	m_cat.exit();
 	destroy();
 }

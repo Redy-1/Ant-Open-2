@@ -1,19 +1,26 @@
 #pragma once
 
-#include "SDL.h"
-#include "defines.h"
+#include "Engine.h"
 
 class Cat {
 public:
 	Cat();
 	~Cat();
 
-	
+	static const int CAT_WIDTH = 63;
+	static const int CAT_HEIGHT = 138;
+	static const int CAT_HITBOX_WIDTH = 63;
+	static const int CAT_HITBOX_HEIGHT = 138;
 
-	SDL_Rect m_pos;
-	double m_angle;
-	
-	int2 m_vel;
+	SDL_Rect pos;
+	SDL_Rect hitbox;
+	int angle;
+
+	SDL_Texture* txt;
+	int sprite;
+	int timer;
+
+	float2 vel;
 
 	void init();
 	void update();
@@ -21,6 +28,7 @@ public:
 	void exit();
 
 	void getFuel();
+	SDL_Rect calc_hitbox();
 
 private:
 	int fuel;

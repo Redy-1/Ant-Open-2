@@ -32,6 +32,7 @@ int main(int* argc, char* argv[])
 		world.run();
 		SDL_Delay(time_left());
 		next_time += TICK_INTERVAL;
+		// cout << "tick\n";
 	}
 
 	return 0;

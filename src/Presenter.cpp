@@ -60,6 +60,7 @@ void Presenter::draw()
 {
     SDL_SetRenderDrawColor(Presenter::m_main_renderer, 0, 0, 0, 1);
     SDL_RenderClear(m_main_renderer);
+    world.m_cat.draw();
     
     SDL_RenderPresent(m_main_renderer);
 }

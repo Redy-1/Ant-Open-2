@@ -3,6 +3,7 @@
 // #include "start_menu.h"
 #include "Presenter.h"
 #include "InputManager.h"
+#include "Cat.h"
 
 class World
 {
@@ -13,10 +14,12 @@ public:
 	Presenter m_presenter;
 	InputManager m_inputManager;
 
+
 	void init();
 	void run();
 	void destroy();
 
+	Cat m_cat;
 	// Menu menu;
 
 	bool isRunning();
