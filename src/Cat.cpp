@@ -49,7 +49,7 @@ void Cat::update()
 	if (timer >= 60) timer = 0;
 	hitbox = calc_hitbox();
 
-	if (fuel == 0 && vel.x <= 0.1 && vel.y <= 0.1) { world.game_state = 2; } // game over
+	if (fuel == 0 && abs(vel.x) <= 0.1 && abs(vel.y) <= 0.1) { world.game_state = 2; } // game over
 
 	/*
 	int svelx = vel.x;

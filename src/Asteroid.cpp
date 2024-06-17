@@ -33,7 +33,7 @@ void Asteroid::init(int size,int pos_x,int pos_y, int ang)
 		txt = loadTexture("asteroid3.bmp");
 		pos = { pos_x,pos_y,225,225 };
 		mass = 10;
-		hitbox = { 0,0,205,205 };
+		hitbox = { 0,0,195,195 };
 		break;
 	default:
 		break;
