@@ -44,3 +44,4 @@ void FuelBar::exit()
 {
 	SDL_DestroyTexture(frame_txt);
 }
+//test
